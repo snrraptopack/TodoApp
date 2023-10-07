@@ -14,12 +14,12 @@ function App() {
     const [currentIndex ,setCurrentIndex]= React.useState(0)
 
 
-    //for setting getting the current input of the todo item being listed
+    //for setting getting the current input of the tdo item being listed
     function  handleChange(event){
         const {value} =event.target
         setCurrentTodo(value)
     }
-    // a dding items to the todo list
+    // a dding items to the tdo list
     function  handleTodo(){
         setTodoItems(prevItems=>{
             return [...prevItems,{title:currentTodo,isCompleted:false,tools:[]}]
@@ -29,7 +29,7 @@ function App() {
 
     localStorage.setItem('mytodo',JSON.stringify(todoItems))
 
-    //for the completed todo tools used
+    //for the completed tdo tools used
     function handleComplete(event) {
         const {value} = event.target
         setCurrentTodo(value)
@@ -81,13 +81,13 @@ function App() {
            <div
                onClick={()=>setTodoScreen(true)}
                className={`${carStyles.card} ${todoScreen || view? 'hidden': "visible"}`}>
-                <h3 className={carStyles.cardText}>Create a Todo</h3>
+                <h3 className={carStyles.cardText}>Create a Tdo</h3>
            </div>
 
             <div
                 onClick={()=>setView(true)}
                 className={`${carStyles.card} ${todoScreen || view? 'hidden': "visible"}`}>
-                <h3 className={carStyles.cardText}>View Todo</h3>
+                <h3 className={carStyles.cardText}>View Tdo</h3>
             </div>
 
             {todoScreen && <Screen handlechange={handleChange} current={currentTodo} handletodo={handleTodo}/>}
@@ -110,7 +110,7 @@ function App() {
                                     }}
                                     className={`bg-fuchsia-400 w-[40%] h-12 fixed top-0 right-0 flex  items-center justify-center  text-slate-50 font-bold text-xl `}
                                 >
-                                    Check todo's
+                                    Check tdo's
                                 </div>: null
             }
       </div>
